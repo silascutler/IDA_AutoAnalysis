@@ -120,7 +120,7 @@ class autoAnalysis_t(idaapi.plugin_t):
 
 		# Parse each functions // Skip library calls 
 		for segea in idautils.Segments():
-			for funcea in idautils.Functions(segea, SegEnd(segea)):
+			for funcea in idautils.Functions(segea, idc.SegEnd(segea)):
 				functionName = idc.GetFunctionName(funcea)
 				functionFlags = idc.GetFunctionFlags(funcea)
 				if (functionFlags & idaapi.FUNC_LIB or
